@@ -10,4 +10,15 @@ public class RestController {
     public String sayHello() {
         return "Hello World";
     }
+
+    @GetMapping("/new")
+    public String newEndpoint()
+    {
+        return "New Endpoint";
+    }
+
+    @GetMapping("/HAHA")
+    public String haha() {
+        return "Haha";
+    }
 }
