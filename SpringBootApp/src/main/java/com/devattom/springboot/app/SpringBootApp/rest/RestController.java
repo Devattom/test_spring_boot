@@ -1,14 +1,19 @@
 package com.devattom.springboot.app.SpringBootApp.rest;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
-    // expose '/' endpoint that return hello world
+    @Value("${team.name}")
+    public String teamName;
+
+    @Value("${coach.name}")
+    public String coachName;
 
     @GetMapping("/")
     public String sayHello() {
-        return "Hello World";
+        return "Hello World! Team Name: " + teamName + " Coach Name: " + coachName;
     }
 
     @GetMapping("/new")
